@@ -19,7 +19,8 @@ int main() {
     *a = *b = 1;
     printf("a=%u, b=%u\n", a, b);
     printf("*a=%u, *b=%u\n", *a, *b);
-    test_foo(a, b);
+
+    printf("foo_func = %u\n", test_foo);
 
     read_stdin_and_compile();
 
@@ -33,9 +34,6 @@ int main() {
     }
 
     int* (*func)() = (void*)buffer;
-    printf("foo_func = %u\n", test_foo);
-    printf("func = %u\n", func);
-    *a += *b;
 
     (*func)(a, b);
     printf("*a=%u, *b=%u\n", *a, *b);
